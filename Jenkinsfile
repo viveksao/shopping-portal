@@ -12,19 +12,19 @@ pipeline{
         stage('build'){
             steps{
                 echo 'this is the build job'
-                sh 'npm compile'
+                sh 'npm install'
             }
         }
         stage('test'){
             steps{
                 echo 'this is the test job'
-                sh 'npm clean test'
+                sh 'npm test'
             }
         }
         stage('package'){
             steps{
                 echo 'this is the package job'
-                sh 'npm package -DskipTests'
+                sh 'npm run package'
             }
 	}
    }
