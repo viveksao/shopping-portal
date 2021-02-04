@@ -27,13 +27,8 @@ pipeline{
                 sh 'npm package -DskipTests'
             }
 	}
-       stage('Archive') {
-           steps {
-              archiveArtifacts '**/distribution/*.zip'
-                 }
-              }
-        }
-    }
+   }
+ }
     
     post{
         always{
