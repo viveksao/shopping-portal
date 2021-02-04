@@ -4,10 +4,9 @@ pipeline{
 
 // uncomment the following lines by removing /* and */ to enable
     tools{
-        nodejs'nodejs'
+       nodejs 'nodejs' 
     }
     
-
     stages{
         stage('build'){
             steps{
@@ -26,12 +25,14 @@ pipeline{
                 echo 'this is the package job'
                 sh 'npm run package'
             }
-	}
-   }
- }
+        }
+    }
     
     post{
         always{
             echo 'this pipeline has completed...'
         }
+        
     }
+    
+}
