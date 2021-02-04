@@ -4,7 +4,7 @@ pipeline{
 
 // uncomment the following lines by removing /* and */ to enable
     tools{
-        nodejs 'nodejs'
+        nodejs'nodejs'
     }
     
 
@@ -26,6 +26,7 @@ pipeline{
                 echo 'this is the package job'
                 sh 'npm package -DskipTests'
             }
+	}
        stage('Archive') {
            steps {
               archiveArtifacts '**/distribution/*.zip'
